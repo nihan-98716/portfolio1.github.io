@@ -13,20 +13,24 @@ body {
 }
 
 header {
-  background: rgba(20, 20, 20, 0.95);
+  position: sticky;
+  top: 20px;
+  margin: 0 auto;
+  width: 90%;
+  background: rgba(20, 20, 20, 0.9);
   color: #00ffe7;
   padding: 1.2rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  width: 100%;
-  z-index: 1000;
-  top: 0;
-  left: 0;
-  border-bottom: 1px solid #00ffe7;
-  box-shadow: 0 4px 20px rgba(0, 255, 231, 0.2);
+  border-radius: 12px;
+  border: 1px solid #00ffe7;
+  box-shadow: 0 0 15px rgba(0, 255, 231, 0.2);
+  z-index: 999;
+  transition: all 0.3s ease-in-out;
+  backdrop-filter: blur(10px);
 }
+
 
 main {
   margin-top: 100px;
