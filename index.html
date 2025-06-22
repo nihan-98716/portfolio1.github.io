@@ -237,5 +237,41 @@
   <footer>
     <p>&copy; 2025 M Nihan Anoop. All rights reserved.</p>
   </footer>
+  <!-- Certificate Modal -->
+<div id="certModal" class="modal">
+  <span class="close-btn" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modalImage">
+  <div id="modalCaption" class="modal-caption"></div>
+</div>
+<script>
+  function showModal(imageSrc, captionText) {
+    const modal = document.getElementById("certModal");
+    const modalImg = document.getElementById("modalImage");
+    const caption = document.getElementById("modalCaption");
+
+    modal.style.display = "flex";
+    modalImg.src = imageSrc;
+    caption.innerHTML = captionText;
+  }
+
+  function closeModal() {
+    document.getElementById("certModal").style.display = "none";
+  }
+
+  // Attach event listeners to all cert items
+  document.addEventListener("DOMContentLoaded", () => {
+    const certItems = document.querySelectorAll(".cert-item");
+
+    certItems.forEach(item => {
+      const img = item.querySelector("img");
+      const caption = item.querySelector(".cert-caption").innerHTML;
+      img.style.cursor = "pointer";
+      img.addEventListener("click", () => {
+        showModal(img.src, caption);
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
